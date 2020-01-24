@@ -14,7 +14,11 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "SwiftFFTW",
-            dependencies: []),
+            dependencies: ["CFFTW"]),
+        .target(
+            name: "CFFTW",
+            dependencies: ["fftw3"]),
+        .systemLibrary(name: "fftw3", pkgConfig: "fftw3"),
         .testTarget(
             name: "SwiftFFTWTests",
             dependencies: ["SwiftFFTW"]),

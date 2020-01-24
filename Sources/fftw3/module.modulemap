@@ -1,0 +1,4 @@
+module fftw3 [system] {
+  link "fftw3"
+  export *
+}
